@@ -2,9 +2,9 @@
   (:require [ring.adapter.jetty :as ring.jetty]))
 
 (defn handler [request]
-  {:status 200
+  {:status  200
    :headers {"Content-Type" "text/html"}
-   :body "Hello World"})
+   :body    (:body request)})
 
 (defn start [] (ring.jetty/run-jetty handler {:port  3000
                                               :join? false}))
