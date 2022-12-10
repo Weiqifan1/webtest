@@ -21,7 +21,8 @@
 ;(create-user {:body-params {:name "John"}})
 
 (defn get-users [_]
-  @users)
+  {:status 200
+   :body @users})
 
 (defn get-user-by-id [{{:keys [id]} :path-params}]
   {:staus 200
